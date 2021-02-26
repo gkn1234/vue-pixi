@@ -1,0 +1,20 @@
+{
+  "name": "@cmgl/vue-pixi",
+  "version": "1.0.0",
+  "description": "The create-app utilities of vue-pixi.",
+  "module": "dist/vue-pixi.esm.js",
+  "author": "Guo Kainan",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@cmgl/active-container": "^1.0.0",
+    "@cmgl/button": "^1.0.0",
+    "@cmgl/ellipse": "^1.0.0",
+    "@cmgl/progressbar": "^1.0.0",
+    "@cmgl/rectangle": "^1.0.0",
+    "@cmgl/tween": "^1.0.0",
+    "@cmgl/vue-pixi-core": "^1.0.0"
+  }
+}

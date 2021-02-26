@@ -1,0 +1,14 @@
+{
+  "name": "@cmgl/tween",
+  "version": "1.0.0",
+  "description": "A simple way to use TweenMax in GSAP.",
+  "module": "dist/tween.esm.js",
+  "author": "Guo Kainan",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "gsap": "^3.6.0"
+  }
+}

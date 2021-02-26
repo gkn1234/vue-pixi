@@ -1,0 +1,18 @@
+{
+  "name": "@cmgl/vue-pixi-core",
+  "version": "1.0.0",
+  "description": "The create-app utilities of vue-pixi.",
+  "module": "dist/vue-pixi-core.esm.js",
+  "author": "Guo Kainan",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@cmjs/utils-event": "^1.0.1",
+    "@cmjs/utils-validator": "^1.0.1",
+    "pixi-projection": "^0.3.15",
+    "pixi.js": "^5.3.8",
+    "vue": "^3.0.6"
+  }
+}

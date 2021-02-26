@@ -1,0 +1,43 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: Guo Kainan
+ * @Date: 2021-02-09 10:45:08
+ * @LastEditors: Guo Kainan
+ * @LastEditTime: 2021-02-09 11:19:31
+ */
+export default function vTicker (game) {
+  let ticker = game.$app.ticker
+  // 缓存每一个节点的触发器
+  let cache = new WeakMap()
+
+  return {
+    mounted (el, binding) {
+      console.log('ticker-mounted', el, binding, ticker)
+
+      const handlerObj = cache.get(el)
+      // 避免对同一个对象多次重复绑定
+      if (!handlerObj) {
+        const handler = (time) => {
+          binding.value(time, ticker, removeHandler)
+        }
+
+        function removeHandler () {
+          ticker.remove(handler)
+          cache.delete(el)
+        }
+
+        cache.set(el, { handler, removeHandler })
+        ticker.add(handler)
+      }
+    },
+    beforeUnmount (el, binding) {
+      console.log('ticker-beforeUnmount', el, binding, ticker)
+
+      const handlerObj = cache.get(el)
+      if (handlerObj) {
+        handlerObj.removeHandler()
+      }
+    }
+  }
+}

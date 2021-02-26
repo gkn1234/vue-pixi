@@ -1,22 +1,16 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Guo Kainan
+ * @Date: 2021-02-05 15:37:17
+ * @LastEditors: Guo Kainan
+ * @LastEditTime: 2021-02-26 18:19:21
+-->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <Container>
+    <Text text="hello world"></Text>
+    <component :is="curView"></component>
+  </Container>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<script src="./App.js"></script>
