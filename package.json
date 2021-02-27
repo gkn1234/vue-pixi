@@ -10,7 +10,7 @@
     "dev": "concurrently \"rollup -c -w\" \"vite\"",
     "build": "cross-env NODE_ENV=production rollup -c",
     "serve": "vite preview",
-    "vite:build": "vite build"
+    "vite:build": "vite build --debug"
   },
   "dependencies": {
     "vue": "^3.0.6"

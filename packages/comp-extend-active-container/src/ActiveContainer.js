@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-07 19:25:43
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-12 14:37:54
+ * @LastEditTime: 2021-02-27 11:03:15
  */
 import { inject } from 'vue'
 
@@ -26,7 +26,7 @@ export default {
     // @section 手势触发事件
     // 鼠标移入
     function overHandler (e) {
-      //console.log('over', e, e.data.global.x, e.data.global.y)
+      // console.log('over', e, e.data.global.x, e.data.global.y)
       // 激活move事件
       moveSignal = true
       emit('over', e)

@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 11:17:24
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-05 11:22:03
+ * @LastEditTime: 2021-02-27 11:00:21
  */
 import {
   Container,
@@ -15,6 +15,9 @@ import {
 } from 'pixi.js'
 
 export default function getCreateElement () {
+  const g = window || globalThis
+  const PIXI = g.PIXI || null
+
   const elementList = {
     Container,
     Sprite,

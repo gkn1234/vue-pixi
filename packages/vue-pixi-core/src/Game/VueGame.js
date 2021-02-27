@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 10:00:21
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-26 12:06:18
+ * @LastEditTime: 2021-02-27 10:57:40
  */
 import { ref, onMounted, onBeforeUnmount, inject } from 'vue'
 import common from './common.js'
@@ -32,6 +32,7 @@ export default {
       game.clearScreenFix()
     })
     
+    console.log(game.$template)
     return { 
       className, 
       wrapper, 

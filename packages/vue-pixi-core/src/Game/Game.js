@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 09:44:02
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-26 18:53:00
+ * @LastEditTime: 2021-02-27 10:57:57
  */
 import * as PIXI from 'pixi.js'
 import { createApp } from 'vue'
@@ -32,6 +32,7 @@ class Game {
   // PIXI 渲染器对象
   $renderer = null
 
+
   constructor (options = {}) {    
     // 初始化游戏参数配置
     if (Validator.isObject(options)) {
@@ -51,9 +52,9 @@ class Game {
   _initPixiPlugins () {
     // pixiProjection选项，将PIXI注册为全局对象，pixi-projection必须在全局有PIXI对象时才生效
     const g = window || globalThis
-    g.PIXI = PIXI
     if (this.$options.pixiProjection) {
       // 绑定pixi-projection
+      g.PIXI = PIXI
       require('pixi-projection')
     }      
   }
