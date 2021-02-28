@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/vue-pixi-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The create-app utilities of vue-pixi.",
   "module": "dist/vue-pixi-core.esm.js",
   "author": "Guo Kainan",

@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/rectangle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Component Rectangle for vue-pixi.",
   "module": "dist/rectangle.esm.js",
   "author": "Guo Kainan",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "vue": "^3.0.6",
-    "pixi.js": "^5.3.8"
+    "pixi.js": "^5.3.8",
+    "vue": "^3.0.6"
   }
 }
