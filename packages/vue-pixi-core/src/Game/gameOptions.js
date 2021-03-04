@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 10:00:21
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-26 18:47:06
+ * @LastEditTime: 2021-03-01 10:59:17
  */
 import { Validator } from '@cmjs/utils-validator'
 
@@ -36,7 +36,7 @@ const gameOptionsValidator = new Validator('gameOptionsValidator', {
   },
   pixiProjection: { type: Boolean, default: defaultOptions.pixiProjection },
   pixiOptions: { type: Object, default () { return {} } }
-}, { isWarn: true }) 
+}) 
 
 export {
   getDefaultOptions,

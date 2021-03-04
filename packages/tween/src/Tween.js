@@ -63,9 +63,10 @@ class Tween {
   // 指定动画参数，每次都重新覆盖值
   ani (from = null, to = null) {
     if (typeof from === 'string' && Tween.ANIMATIONS[from]) {
+      const key = from
       // 第一个参数是字符串，则调用预定义的动画
-      from = Tween.ANIMATIONS[from].from
-      to = Tween.ANIMATIONS[from].to
+      from = Tween.ANIMATIONS[key].from
+      to = Tween.ANIMATIONS[key].to
     }
     // 记录动画
     this._animation.from = isObject(from) ? from : null

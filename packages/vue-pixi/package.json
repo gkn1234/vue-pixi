@@ -1,7 +1,7 @@
 {
   "name": "@cmgl/vue-pixi",
   "version": "1.0.1",
-  "description": "The create-app utilities of vue-pixi.",
+  "description": "PIXIJS renderer based on Vue3.",
   "module": "dist/vue-pixi.esm.js",
   "author": "Guo Kainan",
   "license": "MIT",
