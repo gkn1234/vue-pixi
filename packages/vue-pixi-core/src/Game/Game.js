@@ -4,13 +4,14 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 09:44:02
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-27 10:57:57
+ * @LastEditTime: 2021-03-05 18:19:02
  */
-import * as PIXI from 'pixi.js'
 import { createApp } from 'vue'
+import { Application, Renderer } from 'pixi.js'
 
 import { Validator } from '@cmjs/utils-validator'
 import { Event } from '@cmjs/utils-event'
+import { registerProjection } from '@cmgl/pixi-projection2d'
 
 import getPIXIRenderer from '../Renderer/index.js'
 import GameTemplate from './GameTemplate.js'
@@ -19,6 +20,12 @@ import { getDefaultOptions, gameOptionsValidator } from './gameOptions.js'
 import VueGame from './VueGame.vue'
 
 class Game {
+  // @section 插件注册情况相关
+  static PLUGINS = {
+    // pixi-projections
+    projections: false
+  }
+
   // 游戏参数配置
   $options = getDefaultOptions()
   // 游戏全局数据
@@ -50,13 +57,11 @@ class Game {
   
   // 初始化PIXI插件
   _initPixiPlugins () {
-    // pixiProjection选项，将PIXI注册为全局对象，pixi-projection必须在全局有PIXI对象时才生效
-    const g = window || globalThis
-    if (this.$options.pixiProjection) {
-      // 绑定pixi-projection
-      g.PIXI = PIXI
-      require('pixi-projection')
-    }      
+    if (!Game.PLUGINS.projections) {
+      // 注册pixi-projection
+      registerProjection(Renderer)
+      Game.PLUGINS.projections = true
+    }
   }
 
   // 初始化元素模板、dom、样式
@@ -144,7 +149,7 @@ class Game {
     }
     
     // 创建PIXI.Application
-    this.$app = new PIXI.Application({
+    this.$app = new Application({
       width: this.$options.width,
       height: this.$options.height,
       view: this.$template.canvas.el,

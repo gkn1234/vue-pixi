@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 11:17:24
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-27 11:00:21
+ * @LastEditTime: 2021-03-05 18:21:45
  */
 import {
   Container,
@@ -14,10 +14,9 @@ import {
   Graphics
 } from 'pixi.js'
 
-export default function getCreateElement () {
-  const g = window || globalThis
-  const PIXI = g.PIXI || null
+import { Sprite2d, Container2d } from '@cmgl/pixi-projection2d'
 
+export default function getCreateElement () {
   const elementList = {
     Container,
     Sprite,
@@ -25,8 +24,8 @@ export default function getCreateElement () {
     Text,
     Graphics,
     // pixi-projection里面的元素
-    Container2d: PIXI && PIXI.projection ? PIXI.projection.Container2d : Container,
-    Sprite2d: PIXI && PIXI.projection ? PIXI.projection.Sprite2d : Sprite
+    Container2d,
+    Sprite2d
   }
 
   return (type) => {

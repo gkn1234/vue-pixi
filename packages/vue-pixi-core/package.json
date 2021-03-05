@@ -9,9 +9,9 @@
     "access": "public"
   },
   "dependencies": {
+    "@cmgl/pixi-projection2d": "^1.0.0",
     "@cmjs/utils-event": "^1.0.1",
     "@cmjs/utils-validator": "^1.0.1",
-    "pixi-projection": "^0.3.15",
     "pixi.js": "^5.3.8",
     "vue": "^3.0.6"
   }

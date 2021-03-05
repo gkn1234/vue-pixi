@@ -5637,11 +5637,6 @@ pinkie@^2.0.0:
   resolved "https://registry.npmjs.org/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-pixi-projection@^0.3.15:
-  version "0.3.15"
-  resolved "https://registry.npmjs.org/pixi-projection/-/pixi-projection-0.3.15.tgz#69850517a598fe422b9547c826fda6eb67bf971a"
-  integrity sha512-2vWnRcHidlvXXqTHewXF+jdDY4tDDQG6C22HT4MZLM6tdXJePRl3G//YVOFlBQPNLBkLFIR9vcUexxJYR9IHXg==
-
 pixi.js@^5.3.8:
   version "5.3.8"
   resolved "https://registry.npmjs.org/pixi.js/-/pixi.js-5.3.8.tgz#f6389f128be61ca81067a8ecf165dc94861957de"
