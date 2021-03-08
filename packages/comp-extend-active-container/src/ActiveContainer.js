@@ -4,9 +4,9 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-07 19:25:43
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-27 11:03:15
+ * @LastEditTime: 2021-03-08 11:03:44
  */
-import { inject } from 'vue'
+import { inject, ref } from 'vue'
 
 export default {
   name: 'ActiveContainer',
@@ -21,7 +21,7 @@ export default {
     let downmoveSignal = false
 
     // 拖拽手势
-    const { dragDownHandler, dragMoveHandler, dragUpHandler } = dragable(props, emit)
+    const { dragDownHandler, dragMoveHandler, dragUpHandler, activeContainer } = dragable(props, emit)
 
     // @section 手势触发事件
     // 鼠标移入
@@ -94,13 +94,14 @@ export default {
     // @section 通用方法
 
     return {
-      overHandler, outHandler, downHandler, upHandler, upOutsideHandler, moveHandler
+      overHandler, outHandler, downHandler, upHandler, upOutsideHandler, moveHandler,activeContainer
     }
   }
 }
 
 // 拖拽逻辑
 function dragable (props, emit) {
+  let activeContainer = ref(null)
   // 渲染目标的根节点容器，获取次容器是为了适配屏幕
   let rootContainer = inject('rootContainer')
   // 当前拖拽目标
@@ -114,7 +115,8 @@ function dragable (props, emit) {
   function start (e) {
     target = e.currentTarget
     id = e.data.identifier
-    prevPos = rootContainer.toLocal(e.data.global)
+    console.log(activeContainer.value)
+    prevPos = activeContainer.value.parent.toLocal(e.data.global)
     emit('dragstart', e)
   }
   // 拖拽停止
@@ -148,7 +150,8 @@ function dragable (props, emit) {
      * 这里把全局坐标转换为容器相对坐标后再进行计算
      * 因为屏幕适配涉及到旋转舞台，按照全局坐标计算无法实现拖拽
      */
-    const pos = rootContainer.toLocal(e.data.global)
+    console.log(activeContainer.value)
+    const pos = activeContainer.value.parent.toLocal(e.data.global)
     const dx = pos.x - prevPos.x
     const dy = pos.y - prevPos.y
     // 及时更新上一次触发事件的坐标
@@ -164,7 +167,7 @@ function dragable (props, emit) {
     if (e.data.identifier === id && target) { stop(e) }
   }
 
-  return { dragDownHandler, dragMoveHandler, dragUpHandler }
+  return { dragDownHandler, dragMoveHandler, dragUpHandler, activeContainer }
 }
 
 // 拖放逻辑

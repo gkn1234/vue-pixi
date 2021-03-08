@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-05 10:55:40
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-05 16:08:52
+ * @LastEditTime: 2021-03-08 17:50:13
  */
 // 枚举，变换步骤
 const TRANSFORM_STEP = {
@@ -28,11 +28,11 @@ class AbstractProjection {
   legacy = null
 
   /**
-   * @param {PIXI.Transform} lagacy 
+   * @param {PIXI.Transform} legacy 
    * @param {Boolean} enabled
    */
-  constructor (lagacy, enabled) {
-    this.legacy = lagacy
+  constructor (legacy, enabled = true) {
+    this.legacy = legacy
     this.enabled = enabled ? true : false
 
     // sorry for hidden class, it would be good to have special projection field in official pixi

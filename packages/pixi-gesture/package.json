@@ -1,0 +1,14 @@
+{
+  "name": "@cmgl/pixi-gesture",
+  "version": "1.0.0",
+  "description": "Add more gesture support to pixi.js.",
+  "module": "dist/pixi-gesture.esm.js",
+  "author": "Guo Kainan",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "pixi.js": "^5.3.8"
+  }
+}

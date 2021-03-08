@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-09 09:43:37
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-27 11:01:22
+ * @LastEditTime: 2021-03-08 19:16:27
  */
 import { onMounted, reactive, ref } from 'vue'
 import { Texture } from 'pixi.js'
@@ -27,6 +27,7 @@ export default {
     const handler = (e) => {
       // console.log(e)
       const { x, y } = e.data.global
+      
       //console.log(x, y)
       //pos.x = x; pos.y = y
     }

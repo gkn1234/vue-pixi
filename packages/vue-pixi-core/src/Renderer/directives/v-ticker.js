@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-09 10:45:08
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-09 11:19:31
+ * @LastEditTime: 2021-03-08 19:42:40
  */
 export default function vTicker (game) {
   let ticker = game.$app.ticker
@@ -19,7 +19,12 @@ export default function vTicker (game) {
       // 避免对同一个对象多次重复绑定
       if (!handlerObj) {
         const handler = (time) => {
-          binding.value(time, ticker, removeHandler)
+          if (typeof binding.value === 'function') {
+            binding.value(time, el, ticker, removeHandler)
+          }
+          else {
+            console.error('The ticker handler must be a function!')
+          }
         }
 
         function removeHandler () {

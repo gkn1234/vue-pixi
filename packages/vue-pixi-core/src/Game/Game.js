@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 09:44:02
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-05 18:19:02
+ * @LastEditTime: 2021-03-08 14:41:08
  */
 import { createApp } from 'vue'
 import { Application, Renderer } from 'pixi.js'
@@ -125,8 +125,6 @@ class Game {
 
     // 将game对象作为全局变量注入给渲染器
     app.provide('game', this)
-    // 将渲染的根节点作为全局变量注入渲染器
-    app.provide('rootContainer', pixiRootContainer)
     
     if (!warn) {
       // 开发环境下取消警告信息

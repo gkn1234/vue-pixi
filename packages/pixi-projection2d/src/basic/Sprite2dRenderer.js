@@ -4,41 +4,39 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-05 17:26:11
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-05 17:56:16
+ * @LastEditTime: 2021-03-08 17:37:32
  */
 import { TYPES, Buffer, Geometry, AbstractBatchRenderer, BatchShaderGenerator, utils } from 'pixi.js'
 
 const shaderVert = `
-  precision highp float;
-  attribute vec3 aVertexPosition;
-  attribute vec2 aTextureCoord;
-  attribute vec4 aColor;
-  attribute float aTextureId;
-  uniform mat3 projectionMatrix;
-  varying vec2 vTextureCoord;
-  varying vec4 vColor;
-  varying float vTextureId;
+precision highp float;
+attribute vec3 aVertexPosition;
+attribute vec2 aTextureCoord;
+attribute vec4 aColor;
+attribute float aTextureId;
+uniform mat3 projectionMatrix;
+varying vec2 vTextureCoord;
+varying vec4 vColor;
+varying float vTextureId;
 
-  void main (void) {
-    gl_Position.xyw = projectionMatrix * aVertexPosition;
-    gl_Position.z = 0.0;
-    vTextureCoord = aTextureCoord;
-    vTextureId = aTextureId;
-    vColor = aColor;
-  }
-`
+void main (void) {
+  gl_Position.xyw = projectionMatrix * aVertexPosition;
+  gl_Position.z = 0.0;
+  vTextureCoord = aTextureCoord;
+  vTextureId = aTextureId;
+  vColor = aColor;
+}`
 const shaderFrag = `
-  varying vec2 vTextureCoord;
-  varying vec4 vColor;
-  varying float vTextureId;
-  uniform sampler2D uSamplers[%count%];
+varying vec2 vTextureCoord;
+varying vec4 vColor;
+varying float vTextureId;
+uniform sampler2D uSamplers[%count%];
 
-  void main (void) {
-    vec4 color;
-    %forloop%
-    gl_FragColor = color * vColor;
-  }
-`
+void main (void) {
+  vec4 color;
+  %forloop%;
+  gl_FragColor = color * vColor;
+}`
 
 export class Batch2dGeometry extends Geometry {
   _buffer = null

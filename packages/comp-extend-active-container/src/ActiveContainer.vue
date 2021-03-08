@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-02-10 14:52:29
 -->
 <template>
-  <Container
+  <Container ref="activeContainer"
     v-pon:pointerover="overHandler"
     v-pon:pointerout="outHandler"
     v-pon:pointerdown="downHandler"

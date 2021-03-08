@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-05 10:45:40
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-05 18:13:45
+ * @LastEditTime: 2021-03-08 17:32:42
  */
 import { Batch2dPlugin } from './basic/Sprite2dRenderer.js'
 

@@ -9,6 +9,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@cmgl/pixi-gesture": "^1.0.0",
     "@cmgl/pixi-projection2d": "^1.0.0",
     "@cmjs/utils-event": "^1.0.1",
     "@cmjs/utils-validator": "^1.0.1",

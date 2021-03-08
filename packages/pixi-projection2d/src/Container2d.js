@@ -4,13 +4,15 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-05 10:46:33
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-05 16:45:30
+ * @LastEditTime: 2021-03-08 17:59:24
  */
 import { Container } from 'pixi.js'
 import { Projection2d } from './Projection2d.js'
 import { TRANSFORM_STEP } from './basic/AbstractProjection.js'
 
-// 依赖this，是非常危险的方法
+/**
+ * @warn 依赖this，是非常危险的方法
+ */
 export function container2dWorldTransform () {
   return this.proj.affine ? this.transform.worldTransform : this.proj.world
 }

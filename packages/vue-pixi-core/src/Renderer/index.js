@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 10:29:28
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-09 10:44:31
+ * @LastEditTime: 2021-03-08 14:40:47
  */
 import { createRenderer } from 'vue'
 import { Text, Container } from 'pixi.js'
@@ -71,12 +71,15 @@ export default function getPIXIRenderer(game) {
   // 临时保存创建启动方法
   const _createApp = renderer.createApp.bind(renderer)
 
-  // 重写启动方法，在启动后做更多的处理
+  /**
+   * 重写启动方法，在启动后做更多的处理
+   * @param {Object} component 组件模板
+   */
   renderer.createApp = (component) => {
     const app = _createApp(component)
 
     // 更多处理，处理指令
-    bindDirectives(app, game)
+    bindDirectives(game, app)
 
     return app
   }
