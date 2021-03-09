@@ -4,14 +4,11 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-07 17:23:29
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-19 16:51:22
+ * @LastEditTime: 2021-03-09 14:15:26
 -->
 <template>
-  <ActiveContainer ref="container"
-    @over="overHandler"
-    @out="outHandler"
-    @up="upHandler"
-    @down="downHandler"
+  <Container ref="container"
+    v-gesture="gestureHandler"
     :pivotX="w / 2" :pivotY="h / 2">
     <slot name="bottom"></slot>
     <Rectangle v-if="rec"
@@ -34,7 +31,7 @@
       :anchorX="0.5" :anchorY="0.5"
       :style="textStyle"></Text>
     <slot></slot>
-  </ActiveContainer>
+  </Container>
 </template>
 
 <script src="./Button.js"></script>

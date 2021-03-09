@@ -88,16 +88,20 @@ class Tween {
         /**
          * @attention 控制exec方法只能执行一次，如果要改变执行状态或者再次执行，需要在动画对象上执行各种播放方法
          */
+        console.error('The exec() function has run successfully. If you want to replay the animation. Handle this.tween.restart() instead of this.')
         resolve(this)
       }
       if (!isObject(this._el)) {
         // 未指定或者不合法动画元素，不允许播放，直接resolve本体
-        console.error('Invalid target Element!')
-        resolve(this)
+        const txt = 'Invalid target element!'
+        console.error(txt)
+        reject(new Error(txt))
       }
       if (!this._animation.from && !this._animation.to) {
         // 未指定动画参数，相当于直接完成执行
-        resolve(this)
+        const txt = 'Invalid animation settings!'
+        console.error(txt)
+        reject(new Error(txt))
       }
 
       // 指定动画完成函数，加入Promise要素，并更新配置

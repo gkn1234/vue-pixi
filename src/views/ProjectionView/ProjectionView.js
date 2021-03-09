@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-05 18:57:06
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-08 19:47:36
+ * @LastEditTime: 2021-03-09 16:23:43
  */
 import { Texture, Point } from 'pixi.js'
 import { computed, inject, ref } from 'vue'
@@ -128,7 +128,7 @@ function planeController () {
   }
 
   // 飞机旋转动画
-  function planeAnimate (time, el) {
+  function planeAnimate (time, { el }) {
     el.rotation += 0.1
   }
 

@@ -9,8 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/active-container": "^1.0.1",
-    "@cmgl/rectangle": "^1.0.1",
+    "@cmgl/graphics": "^1.0.0",
     "@cmgl/tween": "^1.0.3",
     "pixi.js": "^5.3.8",
     "vue": "^3.0.6"

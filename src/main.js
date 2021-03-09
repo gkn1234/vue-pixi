@@ -4,11 +4,12 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-26 11:06:50
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-26 18:23:09
+ * @LastEditTime: 2021-03-09 16:54:18
  */
 import { Game } from '$vue-pixi'
 import App from '@/App.vue'
 
+// 这是演示测试应用
 const game = new Game({
   pixiOptions: {
     // 抗锯齿

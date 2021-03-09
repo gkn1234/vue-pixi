@@ -9,11 +9,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/active-container": "^1.0.1",
     "@cmgl/button": "^1.0.3",
-    "@cmgl/ellipse": "^1.0.1",
+    "@cmgl/graphics": "^1.0.0",
     "@cmgl/progressbar": "^1.0.1",
-    "@cmgl/rectangle": "^1.0.1",
     "@cmgl/tween": "^1.0.3",
     "@cmgl/vue-pixi-core": "^1.0.2"
   }

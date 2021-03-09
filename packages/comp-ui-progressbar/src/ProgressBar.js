@@ -4,11 +4,11 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-05 11:54:05
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-26 18:30:00
+ * @LastEditTime: 2021-03-09 16:18:01
  */
 import { ref, reactive, watchEffect, onMounted, onBeforeUnmount } from 'vue'
 import { Texture } from 'pixi.js'
-import { Rectangle } from '@cmgl/rectangle'
+import { Rectangle } from '@cmgl/graphics'
 
 export default {
   name: 'ProgressBar',

@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/rectangle": "^1.0.1",
+    "@cmgl/graphics": "^1.0.0",
     "pixi.js": "^5.3.8",
     "vue": "^3.0.6"
   }

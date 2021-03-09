@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-06 10:35:07
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-27 10:55:05
+ * @LastEditTime: 2021-03-09 16:24:21
  */
 import { reactive, ref, inject, onMounted, onUnmounted } from 'vue'
 import { ProgressBar } from '$vue-pixi'
@@ -20,8 +20,8 @@ export default {
 
     // 纹理进度条
     const textureBar = reactive({
-      background: '/img/outer.png',
-      progress: '/img/inner.png'
+      background: '/outer.png',
+      progress: '/inner.png'
     })
 
     // 进度条数据
@@ -39,7 +39,7 @@ function progressForward () {
   const game = inject('game')
   let progress = ref(0)
   // 每一帧前进1
-  function progressFoward (time, ticker, stop) {
+  function progressFoward (time, { stop }) {
     //console.log(time, ticker)
     if (progress.value < 100) {
       progress.value = progress.value + 1
