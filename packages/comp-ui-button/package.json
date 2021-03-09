@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Component Button for vue-pixi.",
   "module": "dist/button.esm.js",
   "author": "Guo Kainan",
@@ -9,8 +9,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/graphics": "^1.0.0",
-    "@cmgl/tween": "^1.0.3",
+    "@cmgl/graphics": "^1.0.4",
+    "@cmgl/tween": "^1.0.4",
     "pixi.js": "^5.3.8",
     "vue": "^3.0.6"
   }

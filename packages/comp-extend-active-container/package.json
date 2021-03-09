@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/active-container",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Component ActiveContainer for vue-pixi.",
   "module": "dist/active-container.esm.js",
   "author": "Guo Kainan",

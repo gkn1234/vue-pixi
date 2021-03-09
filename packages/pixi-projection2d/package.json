@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/pixi-projection2d",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Rewrite 2d part of pixi-projection in ES module.",
   "module": "dist/pixi-projection2d.esm.js",
   "author": "Guo Kainan",

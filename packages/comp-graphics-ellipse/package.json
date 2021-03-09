@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/ellipse",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Component Ellipse for vue-pixi.",
   "module": "dist/ellipse.esm.js",
   "author": "Guo Kainan",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/rectangle": "^1.0.1",
+    "@cmgl/rectangle": "^1.0.4",
     "vue": "^3.0.6"
   }
 }
