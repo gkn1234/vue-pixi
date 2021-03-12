@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/vue-pixi",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "PIXIJS renderer based on Vue3.",
   "module": "dist/vue-pixi.esm.js",
   "author": "Guo Kainan",
@@ -9,10 +9,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/button": "^1.0.4",
-    "@cmgl/graphics": "^1.0.4",
-    "@cmgl/progressbar": "^1.0.4",
-    "@cmgl/tween": "^1.0.4",
-    "@cmgl/vue-pixi-core": "^1.0.4"
+    "@cmgl/button": "^1.0.5",
+    "@cmgl/graphics": "^1.0.5",
+    "@cmgl/progressbar": "^1.0.5",
+    "@cmgl/tween": "^1.0.5",
+    "@cmgl/vue-pixi-core": "^1.0.5"
   }
 }
