@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 09:44:02
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-08 14:41:08
+ * @LastEditTime: 2021-03-11 18:53:11
  */
 import { createApp } from 'vue'
 import { Application, Renderer } from 'pixi.js'
@@ -28,7 +28,7 @@ class Game {
 
   // 游戏参数配置
   $options = getDefaultOptions()
-  // 游戏全局数据
+  // 用于挂载游戏全局数据，如 game.$data.xxx = xxx
   $data = {}
   // 游戏Dom容器对象
   $template = {}
@@ -74,17 +74,6 @@ class Game {
     // canvas画布
     this.$template.canvas = new GameTemplate('canvas')
     this.$template.canvas.setStyle(styles.canvas)
-  }
-
-  // 挂载数据
-  use (key = '', data) {
-    this.$data[key] = data
-    return this
-  }
-  
-  // 使用挂载的数据
-  getUsed (key = '') {
-    return this.$data[key]
   }
   
   // 挂载到指定dom下，不支持miniGame为true的小游戏环境
