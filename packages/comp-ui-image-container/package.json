@@ -1,0 +1,16 @@
+{
+  "name": "@cmgl/image-container",
+  "version": "1.0.5",
+  "description": "Component ImageContainer for vue-pixi.",
+  "module": "dist/image-container.esm.js",
+  "author": "Guo Kainan",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@cmgl/graphics": "^1.0.5",
+    "pixi.js": "^5.3.8",
+    "vue": "^3.0.6"
+  }
+}

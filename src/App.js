@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-05 17:44:55
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-09 16:53:14
+ * @LastEditTime: 2021-03-12 13:30:37
  */
 import { ref } from 'vue'
 
@@ -12,6 +12,7 @@ import ButtonView from '@/views/ButtonView/ButtonView.vue'
 import ProgressBarView from '@/views/ProgressBarView/ProgressBarView.vue'
 import DragView from '@/views/DragView/DragView.vue'
 import ProjectionView from '@/views/ProjectionView/ProjectionView.vue'
+import GraphicView from '@/views/GraphicView/GraphicView.vue'
 
 export default {
   name: 'App',
@@ -19,10 +20,11 @@ export default {
     ButtonView,
     ProgressBarView,
     DragView,
-    ProjectionView
+    ProjectionView,
+    GraphicView
   },
   setup () {
-    let curView = ref('ProjectionView')
+    let curView = ref('GraphicView')
 
     return { curView }
   }

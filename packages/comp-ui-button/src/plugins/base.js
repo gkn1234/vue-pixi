@@ -4,9 +4,10 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-09 10:58:40
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-09 14:53:27
+ * @LastEditTime: 2021-03-12 18:35:26
  */
 import { reactive, watchEffect } from 'vue'
+import { useBorderProps, useBackgroundProps } from '@cmgl/graphics'
 import { Texture } from 'pixi.js'
 
 // 获取按钮类型的组件的一些通用props 
@@ -20,21 +21,15 @@ export function useButtonProps () {
     // 底部矩形配置相关
     // 是否显示底部矩形
     rec: { type: Boolean, default: true },
-    // 边框颜色
-    bdColor: { type: [String, Number], default: 0 },
-    // 边框宽度
-    bdWidth: { type: Number, default: 0 },
-    // 边框透明度
-    bdAlpha: { type: Number, default: 1 },
-    // 背景颜色
-    bgColor: { type: [String, Number], default: 0 },
-    // 背景透明度
-    bgAlpha: { type: Number, default: 1 },
+    // 边框
+    ...useBorderProps(),
+    // 背景
+    ...useBackgroundProps(),
     // 进度条矩形的圆角
     radius: { type: Number, default: 0 },
 
-    // 中部Sprite配置相关
-    bgTexture: { type: [Texture, String], default: null },
+    // 中部Sprite的纹理
+    bgTexture: { type: [String, Texture], default: null },
 
     // 顶部Text配置相关
     // 文字

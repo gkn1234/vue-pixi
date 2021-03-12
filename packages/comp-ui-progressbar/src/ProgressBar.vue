@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-05 11:53:51
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-02-12 15:06:15
+ * @LastEditTime: 2021-03-12 18:34:27
 -->
 <template>
   <Container>
@@ -17,11 +17,12 @@
     <Rectangle v-else 
       :radius="radius"
       :w="w" :h="h"
-      :lineWidth="bdWidth"
-      :lineColor="bdColor"
-      :lineAlpha="bdAlpha"
-      :fillColor="bgColor"
-      :fillAlpha="bgAlpha"></Rectangle>
+      :bdWidth="bdWidth"
+      :bdColor="bdColor"
+      :bdAlpha="bdAlpha"
+      :bdAlign="bdAlign"
+      :bgColor="bgColor"
+      :bgAlpha="bgAlpha"></Rectangle>
     <!-- 进度条内容 -->
     <Sprite ref="progressSprite" v-if="progressTexture"
       :texture="progressTexture"
@@ -34,8 +35,8 @@
       :scaleX="progressScaleX" :scaleY="progressScaleY"
       :x="w * 0.5" :y="h * 0.5"
       :pivotX="w * 0.5" :pivotY="h * 0.5"
-      :fillColor="progressColor"
-      :fillAlpha="progressAlpha"></Rectangle>
+      :bgColor="progressColor"
+      :bgAlpha="progressAlpha"></Rectangle>
     <!-- 进度条遮罩 -->
     <Rectangle ref="progressMask"
       :radius="radius"
@@ -43,7 +44,7 @@
       :scaleX="progressScaleX" :scaleY="progressScaleY"
       :x="w * 0.5" :y="h * 0.5"
       :pivotX="w * 0.5" :pivotY="h * 0.5"
-      :fillColor="0"></Rectangle>
+      :bgColor="0"></Rectangle>
     
     <slot></slot>
   </Container>

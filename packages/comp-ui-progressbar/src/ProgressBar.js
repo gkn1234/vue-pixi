@@ -4,11 +4,11 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-05 11:54:05
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-09 16:18:01
+ * @LastEditTime: 2021-03-12 18:33:33
  */
 import { ref, reactive, watchEffect, onMounted, onBeforeUnmount } from 'vue'
 import { Texture } from 'pixi.js'
-import { Rectangle } from '@cmgl/graphics'
+import { Rectangle, useBorderProps, useBackgroundProps } from '@cmgl/graphics'
 
 export default {
   name: 'ProgressBar',
@@ -28,17 +28,11 @@ export default {
     // 进度条矩形的圆角
     radius: { type: Number, default: 0 },
 
-    // 背景矩形的设定参数。如果没有设置Texture项，则由Rectangle实现进度条
-    // 边框颜色
-    bdColor: { type: [String, Number], default: 0 },
-    // 边框宽度
-    bdWidth: { type: Number, default: 0 },
-    // 边框透明度
-    bdAlpha: { type: Number, default: 1 },
-    // 背景颜色
-    bgColor: { type: [String, Number], default: 0 },
-    // 背景透明度
-    bgAlpha: { type: Number, default: 1 },
+    // 背景矩形的设定参数。如果没有设置Texture项，则由纯色Rectangle实现进度条
+    // 背景矩形边框设定详见@cmgl/graphics
+    ...useBorderProps(),
+    // 背景颜色设定详见@cmgl/graphics
+    ...useBackgroundProps(),
     // 进度条颜色
     progressColor: { type: [String, Number], default: 0 },
     // 进度条透明度

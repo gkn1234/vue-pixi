@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-01-29 10:29:28
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-08 14:40:47
+ * @LastEditTime: 2021-03-12 16:48:21
  */
 import { createRenderer } from 'vue'
 import { Text, Container } from 'pixi.js'

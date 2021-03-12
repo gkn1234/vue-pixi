@@ -1,9 +1,10 @@
 /*!
- * @cmgl/pixi-gesture - v1.0.4
+ * @cmgl/pixi-gesture - v1.0.5
  *
  * @cmgl/pixi-gesture is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 function unwrapExports (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
@@ -596,3 +597,4 @@ var Drag = /*#__PURE__*/function (_Gesture) {
 }(Gesture);
 
 export { Drag, GESTURE_NAME, Gesture };
+//# sourceMappingURL=pixi-gesture.esm.js.map

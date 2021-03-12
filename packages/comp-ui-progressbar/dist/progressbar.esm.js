@@ -1,27 +1,53 @@
 /*!
- * @cmgl/progressbar - v1.0.4
+ * @cmgl/progressbar - v1.0.5
  *
  * @cmgl/progressbar is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-import { ref, onMounted, onBeforeUnmount, resolveComponent, openBlock, createBlock, withCtx, createVNode, renderSlot } from 'vue';
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35734/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+import { ref, onMounted, onBeforeUnmount, resolveComponent, openBlock, createBlock, withCtx, createCommentVNode, createVNode, renderSlot } from 'vue';
 import { Texture } from 'pixi.js';
-import { Rectangle } from '@cmgl/graphics';
+import { Rectangle, useBorderProps, useBackgroundProps } from '@cmgl/graphics';
 
-/*
- * @Descripttion: 
- * @version: 
- * @Author: Guo Kainan
- * @Date: 2021-02-05 11:54:05
- * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-09 16:18:01
- */
+function unwrapExports (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var defineProperty = createCommonjsModule(function (module) {
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+});
+
+var _defineProperty = unwrapExports(defineProperty);
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var script = {
   name: 'ProgressBar',
   components: {
     Rectangle: Rectangle
   },
-  props: {
+  props: _objectSpread(_objectSpread(_objectSpread({
     // 进度条进度
     progress: {
       type: Number,
@@ -50,33 +76,8 @@ var script = {
     radius: {
       type: Number,
       "default": 0
-    },
-    // 背景矩形的设定参数。如果没有设置Texture项，则由Rectangle实现进度条
-    // 边框颜色
-    bdColor: {
-      type: [String, Number],
-      "default": 0
-    },
-    // 边框宽度
-    bdWidth: {
-      type: Number,
-      "default": 0
-    },
-    // 边框透明度
-    bdAlpha: {
-      type: Number,
-      "default": 1
-    },
-    // 背景颜色
-    bgColor: {
-      type: [String, Number],
-      "default": 0
-    },
-    // 背景透明度
-    bgAlpha: {
-      type: Number,
-      "default": 1
-    },
+    }
+  }, useBorderProps()), useBackgroundProps()), {}, {
     // 进度条颜色
     progressColor: {
       type: [String, Number],
@@ -96,7 +97,7 @@ var script = {
       type: [Texture, String],
       "default": null
     }
-  },
+  }),
   setup: function setup(props) {
     // 进度控制逻辑
     var _maskProgress = maskProgress(props),
@@ -145,7 +146,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return openBlock(), createBlock(_component_Container, null, {
     "default": withCtx(function () {
-      return [_ctx.backgroundTexture ? (openBlock(), createBlock(_component_Sprite, {
+      return [createCommentVNode(" 进度条背景 "), _ctx.backgroundTexture ? (openBlock(), createBlock(_component_Sprite, {
         key: 0,
         texture: _ctx.backgroundTexture,
         width: _ctx.w,
@@ -154,17 +155,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         y: _ctx.h * 0.5,
         anchorX: 0.5,
         anchorY: 0.5
-      }, null, 8, ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
+      }, null, 8
+      /* PROPS */
+      , ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
         key: 1,
         radius: _ctx.radius,
         w: _ctx.w,
         h: _ctx.h,
-        lineWidth: _ctx.bdWidth,
-        lineColor: _ctx.bdColor,
-        lineAlpha: _ctx.bdAlpha,
-        fillColor: _ctx.bgColor,
-        fillAlpha: _ctx.bgAlpha
-      }, null, 8, ["radius", "w", "h", "lineWidth", "lineColor", "lineAlpha", "fillColor", "fillAlpha"])), _ctx.progressTexture ? (openBlock(), createBlock(_component_Sprite, {
+        bdWidth: _ctx.bdWidth,
+        bdColor: _ctx.bdColor,
+        bdAlpha: _ctx.bdAlpha,
+        bdAlign: _ctx.bdAlign,
+        bgColor: _ctx.bgColor,
+        bgAlpha: _ctx.bgAlpha
+      }, null, 8
+      /* PROPS */
+      , ["radius", "w", "h", "bdWidth", "bdColor", "bdAlpha", "bdAlign", "bgColor", "bgAlpha"])), createCommentVNode(" 进度条内容 "), _ctx.progressTexture ? (openBlock(), createBlock(_component_Sprite, {
         key: 2,
         ref: "progressSprite",
         texture: _ctx.progressTexture,
@@ -174,7 +180,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         y: _ctx.h * 0.5,
         anchorX: 0.5,
         anchorY: 0.5
-      }, null, 8, ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
+      }, null, 8
+      /* PROPS */
+      , ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
         key: 3,
         ref: "progressRec",
         radius: _ctx.radius,
@@ -186,9 +194,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         y: _ctx.h * 0.5,
         pivotX: _ctx.w * 0.5,
         pivotY: _ctx.h * 0.5,
-        fillColor: _ctx.progressColor,
-        fillAlpha: _ctx.progressAlpha
-      }, null, 8, ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY", "fillColor", "fillAlpha"])), createVNode(_component_Rectangle, {
+        bgColor: _ctx.progressColor,
+        bgAlpha: _ctx.progressAlpha
+      }, null, 8
+      /* PROPS */
+      , ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY", "bgColor", "bgAlpha"])), createCommentVNode(" 进度条遮罩 "), createVNode(_component_Rectangle, {
         ref: "progressMask",
         radius: _ctx.radius,
         w: _ctx.w * _ctx.progress / 100,
@@ -199,13 +209,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         y: _ctx.h * 0.5,
         pivotX: _ctx.w * 0.5,
         pivotY: _ctx.h * 0.5,
-        fillColor: 0
-      }, null, 8, ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY"]), renderSlot(_ctx.$slots, "default")];
+        bgColor: 0
+      }, null, 8
+      /* PROPS */
+      , ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY"]), renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
+    /* FORWARDED */
+
   });
 }
 
 script.render = render;
+script.__file = "packages/comp-ui-progressbar/src/ProgressBar.vue";
 
 export { script as ProgressBar };
+//# sourceMappingURL=progressbar.esm.js.map

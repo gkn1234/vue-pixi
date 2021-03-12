@@ -4,56 +4,45 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-09 15:27:40
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-09 16:28:48
+ * @LastEditTime: 2021-03-12 18:32:21
  */
-import { Texture } from 'pixi.js'
-import { ref, watchEffect, onMounted, onBeforeUnmount } from 'vue'
-
-export function useGraphicsProps () {
-  return {
-    // 线的宽度
-    lineWidth: { type: Number, default: 0 },
-    // 线的颜色
-    lineColor: { type: [String, Number], default: 0 },
-    // 线的透明度
-    lineAlpha: { type: Number, default: 1 },
-    // 线段的填充纹理
-    lineTexture: { type: Texture, default: null },
-    // 线段的对齐方式(0 = 内部，0.5 = 居中，1 = 外部)
-    lineAlign: { type: Number, default: 1 },
-    // 内部填充颜色
-    fillColor: { type: [String, Number], default: 0 },
-    // 内部填充透明度
-    fillAlpha: { type: Number, default: 1 },
-    // 内部填充纹理
-    fillTexture: { type: Texture, default: null },
-  }
-}
+import { Texture, Matrix } from 'pixi.js'
+import { shallowRef, watchEffect, onMounted, onBeforeUnmount } from 'vue'
 
 /**
- * 画图的基础方法
+ * @attention Graphic只支持纯色方法，beginTextureFill和lineTextureStyle以及相关属性都不再支持。
+ * 原因是PC端和移动端因为WEBGL内核的不同，表现不一致。
+ * 以后Texture只能用Sprite进行显示
  */
-// 指定线的样式
-export function lineStyle (target, width, color, texture, alpha, align) {
-  // 根据color和texture的值确定是颜色填充还是纹理填充，texture不为null即为纹理填充
-  if (texture && texture instanceof Texture) {
-    target.lineTextureStyle({
-      width, texture, color, alpha,
-      alignment: align
-    })
-  }
-  else {
-    target.lineStyle(width, color, alpha, align)
+
+// 边框线段属性
+export function useBorderProps () {
+  return {
+    // 线的宽度
+    bdWidth: { type: Number, default: 0 },
+    // 线的颜色
+    bdColor: { type: [String, Number], default: 0xffffff },
+    // 线的透明度
+    bdAlpha: { type: Number, default: 1 },
+    // 线段的对齐方式(0 = 内部，0.5 = 居中，1 = 外部)
+    bdAlign: { type: Number, default: 1 },
   }
 }
-// 指定填充样式
-export function beginFill (target, color, texture, alpha) {
-  // 根据color和texture的值确定是颜色填充还是纹理填充，texture不为null即为纹理填充
-  if (texture && texture instanceof Texture) {
-    target.beginTextureFill({ texture, color, alpha })
+// 内部填充属性
+export function useBackgroundProps () {
+  return {
+    // 内部填充颜色
+    bgColor: { type: [String, Number], default: 0xffffff },
+    // 内部填充透明度
+    bgAlpha: { type: Number, default: 1 },
   }
-  else {
-    target.beginFill(color, alpha)
+}
+
+// 锚点属性
+export function useAnchorProps () {
+  return {
+    anchorX: { type: Number, default: 0 },
+    anchorY: { type: Number, default: 0 }
   }
 }
 
@@ -62,8 +51,17 @@ export function beginFill (target, color, texture, alpha) {
  * @param {Function} draw 重写的画图方法，
  */
 export function useDraw (draw) {  
-  // 图形对象
-  const graphicsObj = ref(null)
+  /**
+   * function draw () {}
+   * draw方法的参数说明
+   * @param {PIXI.DisplayObject} target 有效的PIXI显示对象
+   */
+  
+  /**
+   * 图形对象
+   * 这里必须用shallowRef，因为Texture、Graphic都很重，有循环结构，用ref会让watchEffect进入循环地狱
+   */
+  const graphicsObj = shallowRef(null)
 
   watchEffect(() => {
     draw(graphicsObj.value)
@@ -84,8 +82,3 @@ export function useDraw (draw) {
 
   return { graphicsObj }
 }
-/**
- * function draw () {}
- * draw方法的参数说明
- * @param {PIXI.DisplayObject} target 有效的PIXI显示对象
- */

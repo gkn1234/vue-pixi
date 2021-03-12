@@ -1,9 +1,10 @@
 /*!
- * @cmgl/vue-pixi-core - v1.0.4
+ * @cmgl/vue-pixi-core - v1.0.5
  *
  * @cmgl/vue-pixi-core is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35732/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 import { createRenderer, reactive, ref, inject, onMounted, onBeforeUnmount, openBlock, createBlock, createVNode, createApp } from 'vue';
 import { Container, Sprite, TilingSprite, Text, Graphics, Texture, Renderer, Application } from 'pixi.js';
 import { Validator } from '@cmjs/utils-validator';
@@ -344,7 +345,7 @@ function bindDirectives(game, app) {
  * @Author: Guo Kainan
  * @Date: 2021-01-29 10:29:28
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-08 14:40:47
+ * @LastEditTime: 2021-03-12 16:48:21
  */
 function getPIXIRenderer(game) {
   var renderer = createRenderer({
@@ -846,10 +847,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [createVNode("canvas", {
     id: _ctx.className.canvas,
     style: _ctx.template.canvas.style
-  }, null, 12, ["id"])], 12, ["id"]);
+  }, null, 12
+  /* STYLE, PROPS */
+  , ["id"])], 12
+  /* STYLE, PROPS */
+  , ["id"]);
 }
 
 script.render = render;
+script.__file = "packages/vue-pixi-core/src/Game/VueGame.vue";
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -1195,3 +1201,4 @@ Object.assign(Game, common);
 Game.optionsValidator = gameOptionsValidator;
 
 export { Game, Reactivity, getPIXIRenderer };
+//# sourceMappingURL=vue-pixi-core.esm.js.map

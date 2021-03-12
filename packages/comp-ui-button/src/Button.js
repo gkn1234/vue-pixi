@@ -4,13 +4,13 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-07 17:23:35
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-09 16:16:44
+ * @LastEditTime: 2021-03-12 14:45:11
  */
 import { Texture } from 'pixi.js'
 
 import { Rectangle } from '@cmgl/graphics'
 
-import { useButtonProps, useButtonText, useButtonEvents } from './plugins/basic.js'
+import { useButtonProps, useButtonText, useButtonEvents } from './plugins/base.js'
 import { hoverScaleEffect, clickScaleEffect } from './plugins/animations.js'
 
 export default {

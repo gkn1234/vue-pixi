@@ -15,11 +15,12 @@
       name="bgRec"
       :w="w" :h="h"
       :radius="radius"
-      :lineWidth="bdWidth"
-      :lineColor="bdColor"
-      :lineAlpha="bdAlpha"
-      :fillColor="bgColor"
-      :fillAlpha="bgAlpha"></Rectangle>
+      :bdWidth="bdWidth"
+      :bdColor="bdColor"
+      :bdAlpha="bdAlpha"
+      :bdAlign="bdAlign"
+      :bgColor="bgColor"
+      :bgAlpha="bgAlpha"></Rectangle>
     <slot name="center"></slot>
     <Sprite v-if="bgTexture"
       name="bgSprite"
