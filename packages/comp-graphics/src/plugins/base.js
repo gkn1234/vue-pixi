@@ -4,9 +4,8 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-09 15:27:40
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-12 18:32:21
+ * @LastEditTime: 2021-03-14 16:35:45
  */
-import { Texture, Matrix } from 'pixi.js'
 import { shallowRef, watchEffect, onMounted, onBeforeUnmount } from 'vue'
 
 /**

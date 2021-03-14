@@ -4,8 +4,7 @@
  * @cmgl/progressbar is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35734/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
-import { ref, onMounted, onBeforeUnmount, resolveComponent, openBlock, createBlock, withCtx, createCommentVNode, createVNode, renderSlot } from 'vue';
+import { ref, onMounted, onBeforeUnmount, resolveComponent, openBlock, createBlock, withCtx, createVNode, renderSlot } from 'vue';
 import { Texture } from 'pixi.js';
 import { Rectangle, useBorderProps, useBackgroundProps } from '@cmgl/graphics';
 
@@ -146,7 +145,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return openBlock(), createBlock(_component_Container, null, {
     "default": withCtx(function () {
-      return [createCommentVNode(" 进度条背景 "), _ctx.backgroundTexture ? (openBlock(), createBlock(_component_Sprite, {
+      return [_ctx.backgroundTexture ? (openBlock(), createBlock(_component_Sprite, {
         key: 0,
         texture: _ctx.backgroundTexture,
         width: _ctx.w,
@@ -155,9 +154,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         y: _ctx.h * 0.5,
         anchorX: 0.5,
         anchorY: 0.5
-      }, null, 8
-      /* PROPS */
-      , ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
+      }, null, 8, ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
         key: 1,
         radius: _ctx.radius,
         w: _ctx.w,
@@ -168,9 +165,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         bdAlign: _ctx.bdAlign,
         bgColor: _ctx.bgColor,
         bgAlpha: _ctx.bgAlpha
-      }, null, 8
-      /* PROPS */
-      , ["radius", "w", "h", "bdWidth", "bdColor", "bdAlpha", "bdAlign", "bgColor", "bgAlpha"])), createCommentVNode(" 进度条内容 "), _ctx.progressTexture ? (openBlock(), createBlock(_component_Sprite, {
+      }, null, 8, ["radius", "w", "h", "bdWidth", "bdColor", "bdAlpha", "bdAlign", "bgColor", "bgAlpha"])), _ctx.progressTexture ? (openBlock(), createBlock(_component_Sprite, {
         key: 2,
         ref: "progressSprite",
         texture: _ctx.progressTexture,
@@ -180,9 +175,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         y: _ctx.h * 0.5,
         anchorX: 0.5,
         anchorY: 0.5
-      }, null, 8
-      /* PROPS */
-      , ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
+      }, null, 8, ["texture", "width", "height", "x", "y", "anchorX", "anchorY"])) : (openBlock(), createBlock(_component_Rectangle, {
         key: 3,
         ref: "progressRec",
         radius: _ctx.radius,
@@ -196,9 +189,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         pivotY: _ctx.h * 0.5,
         bgColor: _ctx.progressColor,
         bgAlpha: _ctx.progressAlpha
-      }, null, 8
-      /* PROPS */
-      , ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY", "bgColor", "bgAlpha"])), createCommentVNode(" 进度条遮罩 "), createVNode(_component_Rectangle, {
+      }, null, 8, ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY", "bgColor", "bgAlpha"])), createVNode(_component_Rectangle, {
         ref: "progressMask",
         radius: _ctx.radius,
         w: _ctx.w * _ctx.progress / 100,
@@ -210,18 +201,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         pivotX: _ctx.w * 0.5,
         pivotY: _ctx.h * 0.5,
         bgColor: 0
-      }, null, 8
-      /* PROPS */
-      , ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY"]), renderSlot(_ctx.$slots, "default")];
+      }, null, 8, ["radius", "w", "h", "scaleX", "scaleY", "x", "y", "pivotX", "pivotY"]), renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
-    /* FORWARDED */
-
   });
 }
 
 script.render = render;
-script.__file = "packages/comp-ui-progressbar/src/ProgressBar.vue";
 
 export { script as ProgressBar };
-//# sourceMappingURL=progressbar.esm.js.map

@@ -4,7 +4,6 @@
  * @cmgl/button is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35736/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 import { Texture } from 'pixi.js';
 import { useBorderProps, useBackgroundProps, Rectangle } from '@cmgl/graphics';
 import { reactive, watchEffect, computed, resolveComponent, resolveDirective, withDirectives, openBlock, createBlock, withCtx, renderSlot, createCommentVNode, createVNode } from 'vue';
@@ -334,17 +333,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         bdAlign: _ctx.bdAlign,
         bgColor: _ctx.bgColor,
         bgAlpha: _ctx.bgAlpha
-      }, null, 8
-      /* PROPS */
-      , ["w", "h", "radius", "bdWidth", "bdColor", "bdAlpha", "bdAlign", "bgColor", "bgAlpha"])) : createCommentVNode("v-if", true), renderSlot(_ctx.$slots, "center"), _ctx.bgTexture ? (openBlock(), createBlock(_component_Sprite, {
+      }, null, 8, ["w", "h", "radius", "bdWidth", "bdColor", "bdAlpha", "bdAlign", "bgColor", "bgAlpha"])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "center"), _ctx.bgTexture ? (openBlock(), createBlock(_component_Sprite, {
         key: 1,
         name: "bgSprite",
         width: _ctx.w,
         height: _ctx.h,
         texture: _ctx.bgTexture
-      }, null, 8
-      /* PROPS */
-      , ["width", "height", "texture"])) : createCommentVNode("v-if", true), createVNode(_component_Text, {
+      }, null, 8, ["width", "height", "texture"])) : createCommentVNode("", true), createVNode(_component_Text, {
         name: "text",
         text: _ctx.text,
         x: _ctx.w / 2 + _ctx.offsetX,
@@ -352,20 +347,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         anchorX: 0.5,
         anchorY: 0.5,
         style: _ctx.textStyle
-      }, null, 8
-      /* PROPS */
-      , ["text", "x", "y", "anchorX", "anchorY", "style"]), renderSlot(_ctx.$slots, "default")];
+      }, null, 8, ["text", "x", "y", "anchorX", "anchorY", "style"]), renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
-    /* FORWARDED */
-
-  }, 8
-  /* PROPS */
-  , ["pivotX", "pivotY"])), [[_directive_gesture, _ctx.gestureHandler]]);
+  }, 8, ["pivotX", "pivotY"])), [[_directive_gesture, _ctx.gestureHandler]]);
 }
 
 script.render = render;
-script.__file = "packages/comp-ui-button/src/Button.vue";
 
 export { script as Button, clickScaleEffect, hoverScaleEffect, useButtonEvents, useButtonProps, useButtonText };
-//# sourceMappingURL=button.esm.js.map

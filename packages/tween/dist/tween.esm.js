@@ -4,7 +4,6 @@
  * @cmgl/tween is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 import { TweenMax } from 'gsap';
 export { Back, Bounce, Circ, Cubic, Elastic, Expo, Linear, Power0, Power1, Power2, Power3, Power4, Quad, Quart, Quint, Sine, SteppedEase, Strong } from 'gsap';
 
@@ -1181,4 +1180,3 @@ var Tween = /*#__PURE__*/function () {
 Object.assign(Tween, common);
 
 export { Tween };
-//# sourceMappingURL=tween.esm.js.map

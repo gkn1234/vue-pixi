@@ -4,7 +4,6 @@
  * @cmgl/pixi-projection2d is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 import { BatchShaderGenerator, utils, AbstractBatchRenderer, Buffer, TYPES, Geometry, Point, Transform, Rectangle, ObservablePoint, Container, Sprite, Text } from 'pixi.js';
 
 function unwrapExports (x) {
@@ -1559,4 +1558,3 @@ function registerProjection(renderer) {
 }
 
 export { AFFINE, Container2d, Matrix2d, Projection2d, Sprite2d, TRANSFORM_STEP, Text2d, registerProjection };
-//# sourceMappingURL=pixi-projection2d.esm.js.map

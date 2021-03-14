@@ -4,7 +4,6 @@
  * @cmgl/graphics is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35733/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 import 'pixi.js';
 import { shallowRef, watchEffect, onBeforeUnmount, resolveComponent, openBlock, createBlock } from 'vue';
 
@@ -206,13 +205,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return openBlock(), createBlock(_component_Graphics, {
     ref: "graphicsObj"
-  }, null, 512
-  /* NEED_PATCH */
-  );
+  }, null, 512);
 }
 
 script.render = render;
-script.__file = "packages/comp-graphics/src/graphics/Ellipse/Ellipse.vue";
 
 function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -282,13 +278,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
 
   return openBlock(), createBlock(_component_Graphics, {
     ref: "graphicsObj"
-  }, null, 512
-  /* NEED_PATCH */
-  );
+  }, null, 512);
 }
 
 script$1.render = render$1;
-script$1.__file = "packages/comp-graphics/src/graphics/Rectangle/Rectangle.vue";
 
 export { script as Ellipse, script$1 as Rectangle, useAnchorProps, useBackgroundProps, useBorderProps, useDraw };
-//# sourceMappingURL=graphics.esm.js.map
