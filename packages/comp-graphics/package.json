@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/graphics",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Component graphics for vue-pixi.",
   "module": "dist/graphics.esm.js",
   "author": "Guo Kainan",

@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/vue-pixi-core",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The create-app utilities of vue-pixi.",
   "module": "dist/vue-pixi-core.esm.js",
   "author": "Guo Kainan",
@@ -9,8 +9,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/pixi-gesture": "^1.0.5",
-    "@cmgl/pixi-projection2d": "^1.0.5",
+    "@cmgl/pixi-gesture": "^1.0.6",
+    "@cmgl/pixi-projection2d": "^1.0.6",
     "@cmjs/utils-event": "^1.0.1",
     "@cmjs/utils-validator": "^1.0.1",
     "pixi.js": "^5.3.8",

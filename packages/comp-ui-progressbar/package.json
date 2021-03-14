@@ -1,6 +1,6 @@
 {
   "name": "@cmgl/progressbar",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Component ProgressBar for vue-pixi.",
   "module": "dist/progressbar.esm.js",
   "author": "Guo Kainan",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@cmgl/graphics": "^1.0.5",
+    "@cmgl/graphics": "^1.0.6",
     "pixi.js": "^5.3.8",
     "vue": "^3.0.6"
   }
