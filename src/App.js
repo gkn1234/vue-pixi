@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-05 17:44:55
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-12 13:30:37
+ * @LastEditTime: 2021-03-14 16:30:31
  */
 import { ref } from 'vue'
 
@@ -24,7 +24,7 @@ export default {
     GraphicView
   },
   setup () {
-    let curView = ref('GraphicView')
+    let curView = ref('ButtonView')
 
     return { curView }
   }

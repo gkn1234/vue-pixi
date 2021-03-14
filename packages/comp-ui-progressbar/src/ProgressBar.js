@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-02-05 11:54:05
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-12 18:33:33
+ * @LastEditTime: 2021-03-13 14:09:05
  */
 import { ref, reactive, watchEffect, onMounted, onBeforeUnmount } from 'vue'
 import { Texture } from 'pixi.js'
