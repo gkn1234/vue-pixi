@@ -4,7 +4,7 @@
  * @Author: Guo Kainan
  * @Date: 2021-03-04 12:02:23
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-14 16:33:56
+ * @LastEditTime: 2021-03-14 16:37:15
 -->
 # 1.0.6 
 ## 功能调整
@@ -12,7 +12,7 @@
 
 # 1.0.5 (2021-3-12)
 - 删除 `@cmgl/vue-pixi-core` Game对象中的use/getUsed方法，改为直接读取 `game.$data`。
-- `.gitignore` 中取消dist文件夹，并增加了 `npm run publish` 脚本，避免出现上线前忘记打包的尴尬情况。
+- 增加了 `npm run publish` 脚本，避免出现上线前忘记打包的尴尬情况。
 - 发布1.0.4版本时忘记打包，此次更新弥补错误。
 
 # 1.0.4 (2021-3-9)
