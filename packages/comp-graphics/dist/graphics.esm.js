@@ -4,7 +4,6 @@
  * @cmgl/graphics is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
-import 'pixi.js';
 import { shallowRef, watchEffect, onBeforeUnmount, resolveComponent, openBlock, createBlock } from 'vue';
 
 function unwrapExports (x) {
@@ -43,7 +42,7 @@ var _defineProperty = unwrapExports(defineProperty);
  * @Author: Guo Kainan
  * @Date: 2021-03-09 15:27:40
  * @LastEditors: Guo Kainan
- * @LastEditTime: 2021-03-12 18:32:21
+ * @LastEditTime: 2021-03-14 16:35:45
  */
 /**
  * @attention Graphic只支持纯色方法，beginTextureFill和lineTextureStyle以及相关属性都不再支持。
